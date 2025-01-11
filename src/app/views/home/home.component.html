@@ -1,0 +1,14 @@
+<div class="layout-wrapper">
+    <p-menubar>
+      <ng-template pTemplate="start">
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/users">Users</a>
+        <a routerLink="/customers">Clientes</a>
+        <!-- Adicione outros links conforme necessário -->
+      </ng-template>
+    </p-menubar>
+  
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

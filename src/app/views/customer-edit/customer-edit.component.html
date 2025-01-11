@@ -1,0 +1,24 @@
+<div class="customer-edit">
+    <h2>{{ isEditMode ? 'Editar Cliente' : 'Adicionar Cliente' }}</h2>
+    <form (ngSubmit)="submitCustomer()">
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+      <div>
+        <label for="id">Id</label>
+        <input id="id" type="text" pInputText [(ngModel)]="customer.id" name="id" required>
+      </div>
+      <div>
+        <label for="name">Nome</label>
+        <input id="name" type="text" pInputText [(ngModel)]="customer.name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" pInputText [(ngModel)]="customer.email" name="email" required>
+      </div>
+      <div>
+        <label for="telephone">Telefone</label>
+        <input id="telephone" type="telephone" pInputText [(ngModel)]="customer.telephone" name="telephone" >
+      </div>
+      
+      <button pButton type="submit" label="Salvar"></button>
+    </form>
+  </div>

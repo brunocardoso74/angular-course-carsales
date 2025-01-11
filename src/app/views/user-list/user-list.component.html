@@ -1,0 +1,23 @@
+<p>user-list works!</p>
+-->
+<div class="user-list">
+  <h2>Lista de Usuários</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <!-- Adicione outros cabeçalhos conforme necessário -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.type }}</td>
+        <!-- Adicione outras colunas conforme necessário -->
+      </tr>
+    </tbody>
+  </table>
+</div>
