@@ -8,18 +8,6 @@
     background-color: #f0f0f0;
   }
 
-  p-menubar a {
-    display: block;
-    padding: 10px;
-    color: #333333; // Cor cinza escuro para itens não selecionados
-    text-decoration: none;
-  }
-  
-  p-menubar a:hover {
-    background-color: #e0e0e0; // Fundo cinza mais claro ao passar o mouse
-    color: #555555; // Fonte cinza mais escuro ao passar o mouse
-  }
-  
   .layout-content {
     flex: 1;
     padding: 20px;

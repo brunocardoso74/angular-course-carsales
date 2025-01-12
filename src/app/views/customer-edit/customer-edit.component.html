@@ -3,8 +3,8 @@
     <form (ngSubmit)="submitCustomer()">
       <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
       <div>
-        <label for="id">Id</label>
-        <input id="id" type="text" pInputText [(ngModel)]="customer.id" name="id" required>
+        <label for="_id">Id</label>
+        <input id="id" type="text" pInputText [(ngModel)]="customer._id" name="_id" required>
       </div>
       <div>
         <label for="name">Nome</label>

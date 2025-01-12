@@ -13,13 +13,13 @@
       </ng-template>
       <ng-template pTemplate="body" let-customer>
         <tr>
-          <td>{{ customer.id }}</td>
+          <td>{{ customer._id }}</td>
           <td>{{ customer.name }}</td>
           <td>{{ customer.email }}</td>
           <td>{{ customer.telephone }}</td>
           <td>
-            <button pButton type="button" icon="pi pi-pencil" (click)="editCustomer(customer.id)"></button>
-            <button pButton type="button" icon="pi pi-trash" (click)="deleteCustomer(customer.id)"></button>
+            <button pButton type="button" icon="pi pi-pencil" (click)="editCustomer(customer)"></button>
+            <button pButton type="button" icon="pi pi-trash" (click)="deleteCustomer(customer._id)"></button>
           </td>
         </tr>
       </ng-template>

@@ -24,20 +24,20 @@ export class CustomerService {
   return this.httpClient.get<Customer[]>(this.apiUrl, { headers });
  }
 
- public getCustomerById(id: number): Observable<Customer> {
+ /*public getCustomerById(_id: string): Observable<Customer> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
     
-    return this.httpClient.get<Customer>(`${this.apiUrl}/${id}`, { headers });
-  }
+    return this.httpClient.get<Customer>(`${this.apiUrl}/${_id}`, { headers });
+  }*/
 
   public updateCustomer(customer: Customer): Observable<void> {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.authService.getToken()}`
     });
 
-    return this.httpClient.put<void>(`${this.apiUrl}/${customer.id}`, customer, { headers });
+    return this.httpClient.put<void>(`${this.apiUrl}/${customer._id}`, customer, { headers });
   }
 
   public addCustomer(customer: Customer): Observable<Customer> {

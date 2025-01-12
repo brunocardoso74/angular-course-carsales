@@ -7,44 +7,24 @@ import { CustomerListComponent } from './views/customer-list/customer-list.compo
 import { CustomerEditComponent } from './views/customer-edit/customer-edit.component';
 
 export const routes: Routes = [
-    { path: '', component: LoginComponent},
+    { path: '', component: LoginComponent },
     { 
         path: 'home', 
         component: HomeComponent, 
-        canActivate: [AuthGuardService] 
-    },
-    { 
-        path: 'dashboard',
-        canActivate: [AuthGuardService],
-        loadChildren: () => 
-            import('./views/dashboard/dashboard.module').then(
-                m => m.DashboardModule), 
-    },
-    { 
-        path: 'users', 
-        canActivate: [AuthGuardService],
-        loadChildren: () =>
-            import('./views/user-list/user-list.module').then(
-                m => m.UserListModule),
-                
-    //path: 'users', component: UserListComponent
-
-    },
-    { 
-        path: 'customers', 
         canActivate: [AuthGuardService],
         children: [
-            { path: '', component: CustomerListComponent },
-            { path: 'add', component: CustomerEditComponent },
-            { path: 'edit/:id', component: CustomerEditComponent }
+            { path: 'dashboard', loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule) },
+            { path: 'users', loadChildren: () => import('./views/user-list/user-list.module').then(m => m.UserListModule) },
+            { path: 'customers', component: CustomerListComponent },
+            { path: 'customers/add', component: CustomerEditComponent },
+            { path: 'customers/edit/:id', component: CustomerEditComponent }
         ]
     },
-    {path: '**', redirectTo: ''}
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, { useHash: true })],
-    exports: [RouterModule] 
+    exports: [RouterModule]
 })
-
 export class AppRoutingModule {}
